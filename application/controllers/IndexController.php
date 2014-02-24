@@ -189,7 +189,6 @@ class IndexController extends Zend_Controller_Action{
       }else{
           $category = $categoryObj->getCategoryById($categoryId);
           $form->getElement('title')->setValue($category['title']);
-          $form->getElement('category_image')->setValue($category['category_image']);
           $form->getElement('description')->setValue($category['desc']);
           
       }
