@@ -1,0 +1,83 @@
+               <section id="content">
+                 
+                    <div class="page-splash" id="serviceList" style="height : 299px;">
+                        <div class="inner" >
+                    <div class="container">
+                                <div class="sixteen columns">
+                                    <h2 class="title">
+                                        Результаты поиска
+                                    </h2>
+                                  
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="container">
+                        <div class="row-indent">
+
+                            <div style="margin-top: -100px" id="category-list">   
+                       
+                                <div class="container">
+                                    <div class="sixteen columns marg-bott-cont">
+                                        <div class="portfolio-controls">
+                                  
+
+                                          
+                                            <div class="view-mode">
+                                                <a href="#" class="view-mode-grid"></a>
+                                                <a href="#" class="view-mode-list active"></a>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="portfolio-container">
+                                    <div class="container">
+
+    <?php   foreach($this->paginator as $service){ ?>
+                          
+            <div class="one-third column photography element" data-category="photography">
+                                    <div class="portfolio-item">
+                                        <a href="<?= $this->baseUrl() ?>/images/old-book.jpg" class="portfolio-link"><img src="<?= $this->baseUrl() ?>/images/old-book.jpg" alt=""/><div class="hoverDir"><span></span></div></a>
+                                        <div class="inner">
+                                            <div><?= $service['author'] ?></div>
+                                            <div><a href="<?= $this->url(array('controller' => 'service', 'action' => 'description')).'?id='.$service['id'] ?>"><?= $service['title'] ?></a></div>
+                                        
+                                       
+                                            <div class="car-slide-row">
+                                                
+                                                <a href="<?= $this->url(array('controller' => 'service', 'action' => 'edit-service')) ?>?id=<?= $service['id'] ?>" class="button1">Редактировать</a>
+                                            </div>
+                                            <div class="car-slide-row">
+                                                
+                                                <a href="<?= $this->url(array('controller' => 'service', 'action' => 'remove-service')) ?>?id=<?= $service['id'] ?>" class="button1">Удалить</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+           
+     <?php   } ?>
+       
+          
+                                        <div class="clearfix"></div>
+
+                                    </div>
+                                </div>
+                            </div></br>
+<?= $this->paginationControl($this->paginator, 'Sliding', 'pagination.phtml') ?>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                </section> 
+<script>
+$(document).ready(function(){
+   $('#all_books').removeClass('active');                
+   $('#shelfs').removeClass('active');
+   $('#search').addClass('active'); 
+    
+});
+</script>

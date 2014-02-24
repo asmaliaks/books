@@ -1,0 +1,27 @@
+
+<section id="content">
+    <div class="content-row1 content-row-indent">
+        
+        <div class="container">
+             <a id="back" href="<?=$this->url(array('controller'=>'service', 'action'=>'list-of-services'))?>?id=<?= $this->serviceCategory ?>">Назад</a></br></br>
+          <div class="sixteen columns">
+              <img class="desc_image" src="<?php $this->baseUrl()?>/images/old-book.jpg" id="description-image" />
+            <h2 class="title"><?= $this->service['title']; ?></h2>
+            <h3 class="title"><?= $this->service['author']?></h3></br>
+            <span>Дата написания : <?= gmdate("m/d/Y", $this->service['write_date']) ?></span></br>
+            <span>Дата публикации : <?= gmdate("m/d/Y", $this->service['publ_date']) ?></span></br>
+           <div class="container"> <?= $this->service['description']; ?></div>
+          </div>
+        </div>
+    </div>
+   
+</section>
+
+         <script type="text/javascript">
+$(document).ready(function(){
+   //remove class
+
+   //add
+   $('#services').addClass('active');
+});
+</script>

@@ -1,0 +1,39 @@
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+  <script type="text/javascript">
+$(document).ready(function(){
+   $("#submit").click(function(e){
+      if(!$('#name').val() && !$('#author').val() && !$('#searchUpdateSincePicker').val() && !$('#searchUpdateToPicker').val() && !$('#searchWriteSincePicker').val() && !$('#searchWriteToPicker').val() && !$('#searchPublSincePicker').val() && !$('#searchPublToPicker').val()){ 
+        e.preventDefault();
+        alert('Задайте параметры поиска');
+      }
+   });         
+
+   $('#all_books').removeClass('active');                
+   $('#shelfs').removeClass('active');
+   //add
+   $('#search').addClass('active'); 
+});
+
+
+
+  </script>
+  <script>
+   
+  $(function() {
+    $( "#searchAddSincePicker" ).datepicker();
+    $( "#searchAddToPicker" ).datepicker();
+    $( "#searchUpdateSincePicker" ).datepicker();
+    $( "#searchUpdateToPicker" ).datepicker();
+    $( "#searchWriteSincePicker" ).datepicker();
+    $( "#searchWriteToPicker" ).datepicker();
+    $( "#searchPublSincePicker" ).datepicker();
+    $( "#searchPublToPicker" ).datepicker();
+
+  });
+  </script>
+   <div class="container"></br>
+    <?= $this->form ?>
+   </div>
+ 
